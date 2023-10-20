@@ -55,22 +55,22 @@ pub enum WebSocketStatus {
 }
 
 impl IntoView for WebSocketStatus {
-    fn into_view(self, cx: leptos::Scope) -> leptos::View {
+    fn into_view(self) -> leptos::View {
         match self {
-            self::WebSocketStatus::Opened => view! { cx,
+            self::WebSocketStatus::Opened => view! {
                 <p>"WebSocket Status: Opened"</p>
             },
-            self::WebSocketStatus::Closed => view! { cx,
+            self::WebSocketStatus::Closed => view! {
                 <p>"WebSocket Status: Closed"</p>
             },
-            self::WebSocketStatus::Error(_e) => view! { cx,
+            self::WebSocketStatus::Error(_e) => view! {
                 <p>"WebSocket Status: Error"</p>
             },
-            self::WebSocketStatus::Connecting => view! { cx,
+            self::WebSocketStatus::Connecting => view! {
                 <p>"WebSocket Status: Connecting"</p>
             },
         }
-        .into_view(cx)
+        .into_view()
     }
 }
 
